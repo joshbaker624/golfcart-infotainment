@@ -9,7 +9,10 @@ class CarPlayService extends EventEmitter {
 
   initialize() {
     console.log('Initializing CarPlay service...');
-    // In production, this would interface with node-carplay
+    // CarPlay integration options:
+    // 1. Use react-native-carplay (requires React Native)
+    // 2. Use a CarPlay dongle with video capture
+    // 3. Use commercial CarPlay SDK (requires licensing)
     // For now, we'll create a mock implementation
     this.checkForDevices();
   }
