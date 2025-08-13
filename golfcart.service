@@ -1,0 +1,15 @@
+[Unit]
+Description=Golf Cart Infotainment System
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/joshbaker/golfcart-infotainment/start-final.sh
+Restart=always
+RestartSec=10
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
