@@ -34,11 +34,11 @@ if [ -n "$SSH_TTY" ]; then
         xset -dpms
         xset s noblank
         
-        # Hide cursor
-        unclutter -idle 0 &
+        # Hide cursor (if available)
+        unclutter -idle 0 2>/dev/null &
         
-        # Start the app fullscreen as the correct user
-        su - joshbaker -c 'cd /home/joshbaker/golfcart-infotainment && npm start'
+        # Start the app fullscreen as the correct user with no-sandbox flag
+        su - joshbaker -c 'cd /home/joshbaker/golfcart-infotainment && npm start -- --no-sandbox'
     " -- :0 -nocursor -nolisten tcp vt7
 else
     # From console: normal start
@@ -48,11 +48,11 @@ else
         xset -dpms
         xset s noblank
         
-        # Hide cursor
-        unclutter -idle 0 &
+        # Hide cursor (if available)
+        unclutter -idle 0 2>/dev/null &
         
         # Start the app fullscreen
         cd /home/joshbaker/golfcart-infotainment
-        npm start
+        npm start -- --no-sandbox
     " -- -nocursor -nolisten tcp
 fi
