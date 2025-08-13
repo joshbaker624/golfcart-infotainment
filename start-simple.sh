@@ -8,4 +8,4 @@ export DISPLAY=${DISPLAY:-:0}
 cd /home/joshbaker/golfcart-infotainment
 
 # Start the app with required flags
-npm start -- --no-sandbox --disable-gpu-sandbox --disable-setuid-sandbox
+npm start -- --no-sandbox --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage
